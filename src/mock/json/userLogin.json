@@ -1,0 +1,10 @@
+{
+    "msg": "登录成功",
+    "returnCode": 0,
+    "data": {
+        "uId": "1",
+        "userName": "root",
+        "groupId": 1,
+        "groupIdName": "超级管理员"
+    }
+}
