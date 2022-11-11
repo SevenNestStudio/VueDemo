@@ -1,7 +1,7 @@
 /*
  * @Author: 杨宏业
  * @Date: 2022-11-11 10:07:33
- * @LastEditTime: 2022-11-11 15:33:17
+ * @LastEditTime: 2022-11-11 18:27:23
  * @FilePath: \Workspace\vuedemo\src\main.js
  * Copyright: 2022 Qi's Nest Studio. All Rights Reserved.
  */
@@ -11,9 +11,11 @@ import App from './App.vue'
 import router from './router/index'
 import store from './store'
 import 'view-ui-plus/dist/styles/viewuiplus.css'// 引入ViewUIPlus.css
+import VXETable from 'vxe-table'
+import 'vxe-table/lib/style.css'
 // 引入echarts
 import * as echarts from 'echarts'
-// Vue.prototype.$echarts = echarts
+
 
 // 模拟数据
 require('./mock');
@@ -27,12 +29,12 @@ router.beforeEach((to, from, next) => {
     store.commit('setRouteToPath', to);
     const level = window.sessionStorage.getItem('userName');
     if (level) {
-        setTimeout(function() {
+        setTimeout(function () {
             next();
         }, 0)
     } else {
         if (to.path === '/login') { //这就是跳出循环的关键
-            setTimeout(function() {
+            setTimeout(function () {
                 next();
             }, 0)
         } else {
@@ -42,7 +44,8 @@ router.beforeEach((to, from, next) => {
 });
 
 const app = createApp(App)
-
+app.config.globalProperties.$echarts = echarts
+app.use(VXETable)
 app.use(store)
     .use(router)
     .use(ViewUIPlus)
