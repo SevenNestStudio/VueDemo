@@ -1,14 +1,14 @@
 <!--
  * @Author: 杨宏业
  * @Date: 2022-11-11 10:10:01
- * @LastEditTime: 2022-11-11 21:39:14
+ * @LastEditTime: 2022-11-11 22:29:18
  * @FilePath: \Workspace\vuedemo\src\views\HomeView.vue
  * Copyright: 2022 Qi's Nest Studio. All Rights Reserved.
 -->
 <template>
   <div class="layout">
     <Layout>
-      <Header>
+      <Header :style="{ position: 'fixed', width: '100%' }">
         <!-- theme="dark/light" -->
         <Menu mode="horizontal" theme="dark" active-name="subassembly" @on-select="turnToPage">
           <div class="layout-logo">
@@ -25,7 +25,7 @@
           </div>
         </Menu>
       </Header>
-      <Card style="width:100%,margin: auto;">
+      <Card style="width: 100%; margin: auto;">
         <template #title>
           <Icon type="ios-film-outline"></Icon>
           Classic film
@@ -36,7 +36,9 @@
             Change
           </a>
         </template>
-        <router-view class="routerview" />
+        <div :style="{ width: '100%', height: '80%' }">
+          <router-view class="routerview" />
+        </div>
       </Card>
       <Footer class="layout-footer-center">2022-2025 &copy; 柒號小窝工作室</Footer>
     </Layout>
