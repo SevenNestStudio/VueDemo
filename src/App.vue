@@ -1,7 +1,7 @@
 <!--
  * @Author: 杨宏业
  * @Date: 2022-11-11 10:07:33
- * @LastEditTime: 2022-11-11 15:54:42
+ * @LastEditTime: 2022-11-12 11:13:16
  * @FilePath: \Workspace\vuedemo\src\App.vue
  * Copyright: 2022 Qi's Nest Studio. All Rights Reserved.
 -->
@@ -22,7 +22,7 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
 }
 

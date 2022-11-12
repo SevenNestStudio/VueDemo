@@ -1,7 +1,7 @@
 <!--
  * @Author: 杨宏业
  * @Date: 2022-11-11 10:10:01
- * @LastEditTime: 2022-11-11 22:26:00
+ * @LastEditTime: 2022-11-12 11:40:10
  * @FilePath: \Workspace\vuedemo\src\components\subassembly.vue
  * Copyright: 2022 Qi's Nest Studio. All Rights Reserved.
 -->
@@ -9,7 +9,7 @@
     <Layout :style="{ padding: '0 50px' }">
         <Content :style="{ padding: '24px 0', minHeight: '300px', background: '#fff' }">
             <Layout>
-                <Sider hide-trigger collapsible :style="{ overflow: 'hidden', background: '#fff', height: '100vh'}">
+                <Sider hide-trigger collapsible :style="{position: 'fixed', overflow: 'auto', background: '#fff', height: '70%'}">
                     <Menu active-name="basicstables" theme="light" width="auto" @on-select="turnToPage"
                         :open-names="[0]">
                         <Submenu :name=index1.id v-for="index1 in menulist">
@@ -24,7 +24,7 @@
                         </Submenu>
                     </Menu>
                 </Sider>
-                <Content :style="{ padding: '24px', minHeight: '280px', height: '100%',background: '#fff' }">
+                <Content :style="{ padding: '24px',background: '#fff' }">
                     <router-view class="routerview" />
                 </Content>
             </Layout>
@@ -112,5 +112,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-
+.routerview {
+    margin-left: 200px;
+}
 </style>
